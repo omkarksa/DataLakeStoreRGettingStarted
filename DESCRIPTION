@@ -12,3 +12,4 @@ LazyData: TRUE
 NeedsCompilation: no
 Imports: AzureSMR
 Depends: R(>= 3.0.0)
+RoxygenNote: 6.0.1
