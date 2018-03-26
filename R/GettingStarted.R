@@ -60,16 +60,16 @@ doSomeADLSOperations <- function() {
   print(res)
 
   res <- azureDataLakeRead(asc, azureDataLakeAccount, "deleteme/deleteme00.txt")
-  print(res)
+  print(rawToChar(res))
 
   res <- azureDataLakeCreate(asc, azureDataLakeAccount, "deleteme/sampledata.csv")
   datafileCSV <- paste0(getwd(), "/data/sampledata.csv")
   binData <- readBin(con = datafileCSV, what = "raw", n = 7257)
-
+  # Upload a sample CSV file to ADLS
   adlFOS <- azureDataLakeAppendBOS(asc, azureDataLakeAccount, "deleteme/sampledata.csv")
   res <- adlFileOutputStreamWrite(adlFOS, binData, 1, 7257L)
   res <- adlFileOutputStreamClose(adlFOS)
-
+  # Download the sample CSV file from ADLS
   adlFIS <- azureDataLakeOpenBIS(asc, azureDataLakeAccount, "deleteme/sampledata.csv")
   buffer <- raw(7257)
   res <- adlFileInputStreamRead(adlFIS, 0L, buffer, 1L, 7257L)
