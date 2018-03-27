@@ -45,5 +45,5 @@ setwd("<root_of_sample>/DataLakeStoreRGettingStarted")
 doSomeADLSOperations()
 `
 
-**NOTE:
-1. During this installation process if you come across an error with installing any package, please exit RStudio and delete the respective package folder from the paths specified in .libPaths()**
+**NOTE:**
+1. During this installation process if you come across an error with installing any package, please exit RStudio and delete the respective package folder from the paths specified in .libPaths()
