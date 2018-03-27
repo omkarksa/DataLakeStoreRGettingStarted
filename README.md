@@ -1,19 +1,18 @@
-# DataLakeStoreRGettingStarted
+# DataLakeStoreRGettingStarted - Instructions to install and test the DataLakeStoreRGettingStarted client
 Sample ADLS client in R using the R connector for ADLS which is part of AzureSMR
 
-# Instructions to install and test the DataLakeStoreRGettingStarted client
 ## Install R runtime and R studio
 ## Install required R packages
-`
+```
 install.packages("devtools", dependencies = TRUE)
 library(devtools)
 
 install_github("omkarksa/AzureSMR")
 library(AzureSMR)
-`
+```
 
 ## Prepare the config.json property file
-`
+```
 {
  "authType": "ClientCredential",
  "resource": "https://datalake.azure.net/",
@@ -22,7 +21,7 @@ library(AzureSMR)
  "authKey": "zTw5blah+IN+yIblahrKv2K8dM2/BLah4FogBLAH/ME=",
  "azureDataLakeAccount": "azuresmrtestadls"
 }
-`
+```
 
 ## Clone and open the sample client in R Studio
 `
@@ -46,7 +45,5 @@ setwd("<root_of_sample>/DataLakeStoreRGettingStarted")
 doSomeADLSOperations()
 `
 
-**
-NOTE:
-1. During this installation process if you come across an error with installing any package, please exit RStudio and delete the respective package folder from the paths specified in .libPaths()
-**
+**NOTE:
+1. During this installation process if you come across an error with installing any package, please exit RStudio and delete the respective package folder from the paths specified in .libPaths()**
