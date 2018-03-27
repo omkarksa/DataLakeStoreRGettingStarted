@@ -1,12 +1,5 @@
 
-#' keeping all static variables here
-{
-  configPath <- paste0(getwd(), "/../config.json")
-}
-
-#' Create a new `azureActiveContext` using the config.json.
-#'
-#' SAMPLE config_clientcredentials.json:
+#' SAMPLE using ClientCredentials config_clientcredentials.json:
 #'
 #' {
 #' "authType": "ClientCredential",
@@ -17,7 +10,7 @@
 #' "azureDataLakeAccount": "azuresmrtestadls"
 #' }
 #'
-#' SAMPLE config_devicecode.json:
+#' OR SAMPLE using DeviceCode config_devicecode.json:
 #'
 #' {
 #' "authType": "DeviceCode",
@@ -25,6 +18,14 @@
 #' "tenantID": "72fblahf-blah-41af-blah-2d7cBLAHdb47",
 #' "clientID": "2dblah05-blah-4e0a-blah-ae4d2BLAH5df",
 #' }
+
+
+#' keeping all static variables here
+{
+  configPath <- paste0(getwd(), "/../config.json")
+}
+
+#' Create a new `azureActiveContext` using the config.json property file.
 #'
 #' @return `azureActiveContext` object
 getAzureActiveContext <- function() {
@@ -43,7 +44,7 @@ getADLSAccountName <- function() {
   return(config$azureDataLakeAccount)
 }
 
-#' Main function that displays some basic ADLS operations.
+#' Main function that does some basic ADLS operations.
 #'
 doSomeADLSOperations <- function() {
   #get all required objects for an ADLS operation
