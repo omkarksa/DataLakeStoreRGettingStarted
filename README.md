@@ -2,13 +2,10 @@
 Sample ADLS client in R using the R connector for ADLS which is part of AzureSMR
 
 ## Install R runtime and R studio
-## Install required R packages
-```
-install.packages("devtools", dependencies = TRUE)
-library(devtools)
 
-install_github("omkarksa/AzureSMR")
-library(AzureSMR)
+## Clone and open the sample client in R Studio
+```
+git clone https://github.com/omkarksa/DataLakeStoreRGettingStarted.git
 ```
 
 ## Prepare the config.json property file
@@ -23,15 +20,19 @@ library(AzureSMR)
 }
 ```
 
-## Clone and open the sample client in R Studio
-`
-git clone https://github.com/omkarksa/DataLakeStoreRGettingStarted.git
-`
-
 ## Configure the config.json file path in the GettingStarted.R file
 `
 configPath <- paste0(getwd(), "/../config.json")
 `
+
+## Install required R packages
+```
+install.packages("devtools", dependencies = TRUE)
+library(devtools)
+
+install_github("omkarksa/AzureSMR")
+library(AzureSMR)
+```
 
 ## Build and load the DataLakeStoreRGettingStarted client
 
